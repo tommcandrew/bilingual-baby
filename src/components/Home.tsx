@@ -11,6 +11,7 @@ type HomeProps = {
   setLang2: (lang2: string) => void;
   setGender: (gender: string) => void;
   gender: string;
+  setCurrentComponent: (currentComponent: string) => void;
 };
 
 const Home = ({
@@ -21,6 +22,7 @@ const Home = ({
   setLang2,
   gender,
   setGender,
+  setCurrentComponent,
 }: HomeProps) => {
   return (
     <div className="home__wrapper">
@@ -42,7 +44,12 @@ const Home = ({
         toggle={() => setGender(gender === "male" ? "female" : "male")}
         selectedOption={gender}
       />
-      <button className="home__search">Search</button>
+      <button
+        className="home__search"
+        onClick={() => setCurrentComponent("Results")}
+      >
+        Search
+      </button>
     </div>
   );
 };
