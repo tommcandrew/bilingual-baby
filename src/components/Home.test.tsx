@@ -19,4 +19,7 @@ describe("Home", () => {
   it("should render one Toggle component for gender", () => {
     expect(component.find("Toggle")).toHaveLength(1);
   });
+  it("should render a search button", () => {
+    expect(component.find(".home__search")).toHaveLength(1);
+  });
 });

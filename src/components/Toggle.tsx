@@ -2,12 +2,15 @@ import React from "react";
 
 type ToggleProps = {
   selectedOption: string;
-  selectOption: (option: string) => void;
+  toggle: () => void;
 };
 
-const Toggle = ({ selectedOption, selectOption }: ToggleProps) => {
+const Toggle = ({ selectedOption, toggle }: ToggleProps) => {
   return (
-    <div className={`toggle__wrapper toggle__wrapper--${selectedOption}`}>
+    <div
+      className={`toggle__wrapper toggle__wrapper--${selectedOption}`}
+      onClick={toggle}
+    >
       <div className="toggle__switch"></div>
     </div>
   );

@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "./Header";
 import DropDown from "./DropDown";
 import Toggle from "./Toggle";
 
-const options = ["english", "turkish", "spanish"];
+type HomeProps = {
+  options: string[];
+  lang1: string;
+  lang2: string;
+  setLang1: (lang1: string) => void;
+  setLang2: (lang2: string) => void;
+  setGender: (gender: string) => void;
+  gender: string;
+};
 
-const Home = () => {
-  const [selectedLang1, setSelectedLang1] = useState("english");
-  const [selectedLang2, setSelectedLang2] = useState("turkish");
-
+const Home = ({
+  options,
+  lang1,
+  lang2,
+  setLang1,
+  setLang2,
+  gender,
+  setGender,
+}: HomeProps) => {
   return (
     <div className="home__wrapper">
       <Header />
@@ -16,16 +29,20 @@ const Home = () => {
       <div>
         <DropDown
           options={options}
-          selectedOption={selectedLang1}
-          selectOption={setSelectedLang1}
+          selectedOption={lang1}
+          selectOption={setLang1}
         />
         <DropDown
           options={options}
-          selectedOption={selectedLang2}
-          selectOption={setSelectedLang2}
+          selectedOption={lang2}
+          selectOption={setLang2}
         />
       </div>
-      <Toggle />
+      <Toggle
+        toggle={() => setGender(gender === "male" ? "female" : "male")}
+        selectedOption={gender}
+      />
+      <button className="home__search">Search</button>
     </div>
   );
 };
