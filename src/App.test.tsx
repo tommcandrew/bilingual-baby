@@ -6,8 +6,8 @@ import App from "./App";
 configure({ adapter: new Adapter() });
 
 describe("App", () => {
-  it("should render hello world heading", () => {
+  it("should render Home component", () => {
     const component = shallow(<App />);
-    expect(component.text()).toContain("Hello World");
+    expect(component.find("Home")).toHaveLength(1);
   });
 });
