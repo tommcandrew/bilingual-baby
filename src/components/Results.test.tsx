@@ -10,6 +10,7 @@ const setLang2 = jest.fn();
 const gender = "male";
 const setGender = jest.fn();
 const setCurrentComponent = jest.fn();
+const langPair = "enTr";
 
 describe("Results", () => {
   const component = shallow(
@@ -22,6 +23,7 @@ describe("Results", () => {
       gender={gender}
       setGender={setGender}
       setCurrentComponent={setCurrentComponent}
+      langPair={langPair}
     />
   );
   it("should contain wrapper div", () => {
@@ -35,5 +37,25 @@ describe("Results", () => {
   });
   it("should render SingleList component", () => {
     expect(component.find("SingleList")).toHaveLength(1);
+  });
+  it("should contain 3 tab elements", () => {
+    expect(component.find(".results__tab")).toHaveLength(3);
+  });
+  it("should have the selected classname on first tab", () => {
+    expect(
+      component.find(".results__tab").at(0).hasClass("results__tab--selected")
+    ).toBe(true);
+  });
+  it("should give the selected classname to tab after click", () => {
+    const thirdTab = component.find(".results__tab").at(2);
+    thirdTab.simulate("click");
+    expect(
+      component.find(".results__tab").at(2).hasClass("results__tab--selected")
+    ).toBe(true);
+  });
+  it("should render DoubleList component if currentListName is Similar or Equivalent", () => {
+    const secondTab = component.find(".results__tab").at(1);
+    secondTab.simulate("click");
+    expect(component.find("DoubleList")).toHaveLength(1);
   });
 });

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import SingleList from "./SingleList";
+import DoubleList from "./DoubleList";
 import { lists } from "../assets/lists";
 
 type ResultsProps = {
@@ -10,9 +11,15 @@ type ResultsProps = {
   setLang1: (lang1: string) => void;
   setLang2: (lang2: string) => void;
   setGender: (gender: string) => void;
-  gender: string;
+  gender: Gender;
   setCurrentComponent: (currentComponent: string) => void;
+  langPair: "enTr" | "enEs" | "esTr";
 };
+
+type Gender = "male" | "female";
+
+type List = "same" | "equivalent" | "similar";
+
 const Results = ({
   options,
   lang1,
@@ -22,19 +29,39 @@ const Results = ({
   gender,
   setGender,
   setCurrentComponent,
+  langPair,
 }: ResultsProps) => {
-  const [listName, setListName] = useState("same");
-  const [currentList, setCurrentList] = useState([]);
+  const listNames: List[] = ["same", "equivalent", "similar"];
+  const [currentListName, setCurrentListName] = useState<List>("same");
+  const [currentList, setCurrentList] = useState<any>([]);
 
   useEffect(() => {
-    setCurrentList();
-  }, [listName]);
+    const list = lists[langPair][currentListName][gender];
+    setCurrentList(list);
+  }, [langPair, currentListName, gender]);
 
   return (
     <div className="results__wrapper">
       <Header />
+      <div className="results__tabs">
+        {listNames.map((name, index) => (
+          <div
+            key={index}
+            className={`results__tab ${
+              name === currentListName && "results__tab--selected"
+            }`}
+            onClick={() => setCurrentListName(name)}
+          >
+            {name}
+          </div>
+        ))}
+      </div>
       <div className="results__list">
-        <SingleList list={currentList} />
+        {currentListName === "same" ? (
+          <SingleList list={currentList} />
+        ) : (
+          <DoubleList list={currentList} />
+        )}
       </div>
     </div>
   );
