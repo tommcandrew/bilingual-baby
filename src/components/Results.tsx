@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import SingleList from "./SingleList";
+import { lists } from "../assets/lists";
 
 type ResultsProps = {
   options: string[];
@@ -12,7 +13,6 @@ type ResultsProps = {
   gender: string;
   setCurrentComponent: (currentComponent: string) => void;
 };
-
 const Results = ({
   options,
   lang1,
@@ -23,11 +23,18 @@ const Results = ({
   setGender,
   setCurrentComponent,
 }: ResultsProps) => {
+  const [listName, setListName] = useState("same");
+  const [currentList, setCurrentList] = useState([]);
+
+  useEffect(() => {
+    setCurrentList();
+  }, [listName]);
+
   return (
     <div className="results__wrapper">
       <Header />
       <div className="results__list">
-        <SingleList />
+        <SingleList list={currentList} />
       </div>
     </div>
   );
