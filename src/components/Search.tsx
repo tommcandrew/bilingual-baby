@@ -30,11 +30,13 @@ const Search = ({
           options={options}
           selectedOption={lang1}
           selectOption={setLang1}
+          disabledOption={lang2}
         />
         <DropDown
           options={options}
           selectedOption={lang2}
           selectOption={setLang2}
+          disabledOption={lang1}
         />
       </div>
       <Toggle

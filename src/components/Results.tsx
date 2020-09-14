@@ -54,24 +54,24 @@ const Results = ({
         gender={gender}
         setCurrentComponent={setCurrentComponent}
       />
-      <div className="results__tabs">
-        {listNames.map((name, index) => (
-          <div
-            key={index}
-            className={`results__tab ${
-              name === currentListName && "results__tab--selected"
-            }`}
-            onClick={() => setCurrentListName(name)}
-          >
-            {name}
-          </div>
-        ))}
-      </div>
       <div className="results__list">
+        <div className="results__tabs">
+          {listNames.map((name, index) => (
+            <div
+              key={index}
+              className={`results__tab ${
+                name === currentListName && "results__tab--selected"
+              }`}
+              onClick={() => setCurrentListName(name)}
+            >
+              {name}
+            </div>
+          ))}
+        </div>
         {currentListName === "same" ? (
           <SingleList list={currentList} />
         ) : (
-          <DoubleList list={currentList} />
+          <DoubleList list={currentList} currentListName={currentListName} />
         )}
       </div>
     </div>

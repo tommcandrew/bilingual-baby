@@ -6,12 +6,14 @@ type DropDownProps = {
   options: string[];
   selectedOption: string;
   selectOption: (option: string) => void;
+  disabledOption: string;
 };
 
 const DropDown = ({
   options = [],
   selectedOption,
   selectOption,
+  disabledOption,
 }: DropDownProps) => {
   const [listOpen, setListOpen] = useState(false);
 
@@ -41,6 +43,7 @@ const DropDown = ({
               key={index}
               className="dropDown__option"
               onClick={() => handleSelectOption(option)}
+              disabled={option === disabledOption}
             >
               {option}
             </button>

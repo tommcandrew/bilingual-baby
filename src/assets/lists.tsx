@@ -38,8 +38,8 @@ export const lists = {
         { english: "eve", turkish: "havva" },
         { english: "jasmine", turkish: "yasemin" },
         { english: "mary", turkish: "meryem" },
-        { english: "daphne", turkish: "defne", match: 3 },
-        { english: "tamara", turkish: "tamar", match: 3 },
+        { english: "daphne", turkish: "defne" },
+        { english: "tamara", turkish: "tamar" },
       ],
     },
 
@@ -1590,7 +1590,7 @@ export const lists = {
         { english: "beatrice", spanish: "beatriu", match: 1 },
         { english: "beatrice", spanish: "berezi", match: 1 },
         { english: "beatrix", spanish: "beatriu", match: 1 },
-        { english: "beatrix", spanish: "beatriz", 1: 1 },
+        { english: "beatrix", spanish: "beatriz", match: 1 },
         { english: "betsy", spanish: "beatriz", match: 2 },
         { english: "betsy", spanish: "bihotz", match: 1 },
         { english: "bianca", spanish: "blanca", match: 2 },
@@ -2260,11 +2260,11 @@ export const lists = {
     },
     equivalent: {
       male: [
-        { spanish: "abraham", turkish: "ibrahim", match: false },
-        { spanish: "adam", turkish: "adem", match: false },
-        { spanish: "omar", turkish: "ömer", match: false },
-        { spanish: "josé", turkish: "yusuf", match: false },
-        { spanish: "alejandro", turkish: "iskender", match: false },
+        { spanish: "abraham", turkish: "ibrahim" },
+        { spanish: "adam", turkish: "adem" },
+        { spanish: "omar", turkish: "ömer" },
+        { spanish: "josé", turkish: "yusuf" },
+        { spanish: "alejandro", turkish: "iskender" },
       ],
       female: [
         { spanish: "dafne", turkish: "defne" },
