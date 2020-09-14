@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
+import Search from "./Search";
 import SingleList from "./SingleList";
 import DoubleList from "./DoubleList";
 import { lists } from "../assets/lists";
@@ -42,7 +43,17 @@ const Results = ({
 
   return (
     <div className="results__wrapper">
-      <Header />
+      <Header setCurrentComponent={setCurrentComponent} />
+      <Search
+        options={options}
+        lang1={lang1}
+        lang2={lang2}
+        setLang1={setLang1}
+        setLang2={setLang2}
+        setGender={setGender}
+        gender={gender}
+        setCurrentComponent={setCurrentComponent}
+      />
       <div className="results__tabs">
         {listNames.map((name, index) => (
           <div

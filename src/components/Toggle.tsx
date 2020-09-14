@@ -11,7 +11,7 @@ const Toggle = ({ selectedOption, toggle }: ToggleProps) => {
       className={`toggle__wrapper toggle__wrapper--${selectedOption}`}
       onClick={toggle}
     >
-      <div className="toggle__switch"></div>
+      <div className="toggle__switch">{selectedOption}</div>
     </div>
   );
 };

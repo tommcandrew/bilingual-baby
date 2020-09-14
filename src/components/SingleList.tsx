@@ -7,7 +7,8 @@ type SingleListProps = {
 const SingleList = ({ list = [] }: SingleListProps) => {
   return (
     <div className="singleList__wrapper">
-      {list.length &&
+      {typeof list[0] === "string" &&
+        list.length &&
         list.map((item, index) => (
           <div key={index} className="singleList__item">
             {item}

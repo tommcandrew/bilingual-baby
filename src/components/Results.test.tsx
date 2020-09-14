@@ -58,4 +58,7 @@ describe("Results", () => {
     secondTab.simulate("click");
     expect(component.find("DoubleList")).toHaveLength(1);
   });
+  it("should render Search component", () => {
+    expect(component.find("Search")).toHaveLength(1);
+  });
 });

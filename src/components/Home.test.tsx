@@ -33,18 +33,7 @@ describe("Home", () => {
   it("should display an instruction", () => {
     expect(component.find("h2").text()).toContain("Choose");
   });
-  it("should render two DropDown components for languages", () => {
-    expect(component.find("DropDown")).toHaveLength(2);
-  });
-  it("should render one Toggle component for gender", () => {
-    expect(component.find("Toggle")).toHaveLength(1);
-  });
-  it("should render a search button", () => {
-    expect(component.find(".home__search")).toHaveLength(1);
-  });
-  it("should call setCurrentComponent function when search button is clicked", () => {
-    const button = component.find(".home__search");
-    button.simulate("click");
-    expect(setCurrentComponent).toHaveBeenCalledWith("Results");
+  it("should render Search component", () => {
+    expect(component.find("Search")).toHaveLength(1);
   });
 });

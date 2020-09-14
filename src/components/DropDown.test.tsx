@@ -32,7 +32,9 @@ describe("DropDown", () => {
     expect(component.find(".dropDown__option")).toHaveLength(options.length);
   });
   it("should display selected option in display component", () => {
-    expect(component.find(".dropDown__display").text()).toEqual(selectedOption);
+    expect(component.find(".dropDown__display").text()).toContain(
+      selectedOption
+    );
   });
   it("should not display options list after clicking on option", () => {
     const option = component.find(".dropDown__option").at(0);

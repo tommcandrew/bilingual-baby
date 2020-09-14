@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type DropDownProps = {
   options: string[];
@@ -26,6 +28,11 @@ const DropDown = ({
     <div className="dropDown__wrapper">
       <button type="button" className="dropDown__display" onClick={toggleList}>
         {selectedOption}
+        {listOpen ? (
+          <FontAwesomeIcon icon={faAngleUp} />
+        ) : (
+          <FontAwesomeIcon icon={faAngleDown} />
+        )}
       </button>
       {listOpen && (
         <div className="dropDown__list">
