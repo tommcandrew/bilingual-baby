@@ -13,7 +13,10 @@ describe("Home", () => {
   it("should display an instruction", () => {
     expect(component.find("h2").text()).toContain("Choose");
   });
-  it("should render two DropDown components", () => {
+  it("should render two DropDown components for languages", () => {
     expect(component.find("DropDown")).toHaveLength(2);
+  });
+  it("should render one Toggle component for gender", () => {
+    expect(component.find("Toggle")).toHaveLength(1);
   });
 });
