@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import DropDown from "./DropDown";
 import Toggle from "./Toggle";
 
@@ -26,7 +25,7 @@ const Home = ({
 }: HomeProps) => {
   return (
     <div className="home__wrapper">
-      <Header />
+      <h1>Bilingual Baby Name Finder</h1>
       <h2>Choose two languages and a gender:</h2>
       <div>
         <DropDown

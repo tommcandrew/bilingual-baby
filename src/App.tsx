@@ -23,7 +23,18 @@ const App = () => {
           setCurrentComponent={setCurrentComponent}
         />
       )}
-      {currentComponent === "Results" && <Results />}
+      {currentComponent === "Results" && (
+        <Results
+          options={options}
+          lang1={lang1}
+          lang2={lang2}
+          setLang1={setLang1}
+          setLang2={setLang2}
+          setGender={setGender}
+          gender={gender}
+          setCurrentComponent={setCurrentComponent}
+        />
+      )}
     </div>
   );
 };
