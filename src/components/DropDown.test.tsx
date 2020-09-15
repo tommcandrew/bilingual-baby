@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "../Enzyme";
 import DropDown from "./DropDown";
+import { capitalise } from "../utils/capitalise";
 
 const options = ["english", "turkish", "spanish"];
 const selectedOption = "english";
@@ -12,6 +13,7 @@ describe("DropDown", () => {
       options={options}
       selectedOption={selectedOption}
       selectOption={selectOption}
+      disabledOption={"turkish"}
     />
   );
   it("should contain a wrapper div", () => {
@@ -33,7 +35,7 @@ describe("DropDown", () => {
   });
   it("should display selected option in display component", () => {
     expect(component.find(".dropDown__display").text()).toContain(
-      selectedOption
+      capitalise(selectedOption)
     );
   });
   it("should not display options list after clicking on option", () => {
@@ -47,6 +49,6 @@ describe("DropDown", () => {
     const option = component.find(".dropDown__option").at(0);
     const optionText = option.text();
     option.simulate("click");
-    expect(selectOption).toHaveBeenCalledWith(optionText);
+    expect(selectOption).toHaveBeenCalledWith(optionText.toLowerCase());
   });
 });

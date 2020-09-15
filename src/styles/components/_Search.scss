@@ -1,0 +1,20 @@
+.search__wrapper {
+  .search__dropDowns {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+  .search__button {
+    margin: 7rem auto 0 auto;
+    display: block;
+    font-size: 1.8rem;
+    background: $yellow;
+    // color: white;
+    padding: 1rem 1.3rem;
+    border-radius: 25px;
+    border: 2px solid white;
+    font-weight: bold;
+  }
+}

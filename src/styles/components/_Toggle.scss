@@ -1,0 +1,55 @@
+.toggle__wrapper {
+  width: 40%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem auto 0 auto;
+  cursor: pointer;
+  .toggle__checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  .toggle__inner {
+    width: 60%;
+    height: 80%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: background-color 150ms linear;
+    .toggle__switch {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border-radius: 50%;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    &--male {
+      background-color: $blue;
+      .toggle__switch {
+        left: 4px;
+      }
+    }
+    &--female {
+      background-color: $pink;
+      .toggle__switch {
+        left: calc(100% - 4px);
+        transform: translateX(-100%);
+      }
+    }
+  }
+  .toggle__male {
+    font-size: 2.5rem;
+    color: $blue;
+  }
+  .toggle__female {
+    font-size: 2.5rem;
+    color: $pink;
+    //female icon is less wide than male
+    margin-left: 1rem;
+  }
+}

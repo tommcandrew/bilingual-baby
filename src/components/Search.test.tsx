@@ -34,10 +34,10 @@ describe("Search", () => {
     expect(component.find("Toggle")).toHaveLength(1);
   });
   it("should render a search button", () => {
-    expect(component.find(".home__search")).toHaveLength(1);
+    expect(component.find(".search__button")).toHaveLength(1);
   });
   it("should call setCurrentComponent function when search button is clicked", () => {
-    const button = component.find(".home__search");
+    const button = component.find(".search__button");
     button.simulate("click");
     expect(setCurrentComponent).toHaveBeenCalledWith("Results");
   });

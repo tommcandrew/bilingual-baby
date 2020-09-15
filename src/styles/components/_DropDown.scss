@@ -1,0 +1,43 @@
+.dropDown__wrapper {
+  position: relative;
+  user-select: none;
+
+  .dropDown__display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    line-height: 38px;
+    cursor: pointer;
+    border: 1px solid #555;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    font-family: $secondaryFont;
+
+    .dropDown__arrow {
+      margin-left: 20px;
+      color: black;
+    }
+  }
+  .dropDown__list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    background: white;
+    .dropDown__option {
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      padding: 1.5rem 0;
+      line-height: 1.6rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      border: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  }
+}

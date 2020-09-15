@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { capitalise } from "../utils/capitalise";
 
 type DropDownProps = {
   options: string[];
@@ -27,13 +28,17 @@ const DropDown = ({
   };
 
   return (
-    <div className="dropDown__wrapper">
+    <div
+      className="dropDown__wrapper"
+      tabIndex={0}
+      onBlur={() => setListOpen(false)}
+    >
       <button type="button" className="dropDown__display" onClick={toggleList}>
-        {selectedOption}
+        {capitalise(selectedOption)}
         {listOpen ? (
-          <FontAwesomeIcon icon={faAngleUp} />
+          <FontAwesomeIcon icon={faAngleUp} className="dropDown__arrow" />
         ) : (
-          <FontAwesomeIcon icon={faAngleDown} />
+          <FontAwesomeIcon icon={faAngleDown} className="dropDown__arrow" />
         )}
       </button>
       {listOpen && (
@@ -45,7 +50,7 @@ const DropDown = ({
               onClick={() => handleSelectOption(option)}
               disabled={option === disabledOption}
             >
-              {option}
+              {capitalise(option)}
             </button>
           ))}
         </div>

@@ -25,7 +25,7 @@ const Search = ({
 }: SearchProps) => {
   return (
     <div className="search__wrapper">
-      <div>
+      <div className="search__dropDowns">
         <DropDown
           options={options}
           selectedOption={lang1}
@@ -42,9 +42,10 @@ const Search = ({
       <Toggle
         toggle={() => setGender(gender === "male" ? "female" : "male")}
         selectedOption={gender}
+        setOption={setGender}
       />
       <button
-        className="home__search"
+        className="search__button"
         onClick={() => setCurrentComponent("Results")}
       >
         Search

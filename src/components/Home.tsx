@@ -1,5 +1,6 @@
 import React from "react";
 import Search from "./Search";
+import Baby from "./Baby";
 
 type HomeProps = {
   options: string[];
@@ -23,9 +24,13 @@ const Home = ({
   setCurrentComponent,
 }: HomeProps) => {
   return (
-    <div className="home__wrapper">
-      <h1>Bilingual Baby Name Finder</h1>
-      <h2>Choose two languages and a gender:</h2>
+    <div
+      className={`home__wrapper ${
+        gender === "male" ? "home__wrapper--male" : "home__wrapper--female"
+      }`}
+    >
+      <h1 className="home__title">Bilingual Baby Name Finder</h1>
+      <h2 className="home__instruction">Choose two languages and a gender:</h2>
       <Search
         options={options}
         lang1={lang1}
@@ -36,6 +41,7 @@ const Home = ({
         gender={gender}
         setCurrentComponent={setCurrentComponent}
       />
+      <Baby />
     </div>
   );
 };

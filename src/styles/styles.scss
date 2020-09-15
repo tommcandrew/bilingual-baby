@@ -1,1 +1,8 @@
-@import "./global";
+@import "global//variables";
+@import "global/global";
+@import "./components/Baby";
+@import "./components/App";
+@import "./components/Home";
+@import "./components/Search";
+@import "./components/Toggle";
+@import "./components/DropDown";
