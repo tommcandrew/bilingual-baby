@@ -1,13 +1,13 @@
 import React from "react";
 
-const Baby = () => {
+const BabyGirl = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1"
       viewBox="0 0 677.74 729.79"
-      className="baby__wrapper"
+      className="babyGirl__wrapper"
     >
       <defs>
         <linearGradient id="linearGradient7416">
@@ -195,4 +195,4 @@ const Baby = () => {
   );
 };
 
-export default Baby;
+export default BabyGirl;

@@ -1,7 +1,6 @@
 .dropDown__wrapper {
   position: relative;
   user-select: none;
-
   .dropDown__display {
     display: flex;
     align-items: center;
@@ -13,7 +12,14 @@
     padding: 0 1rem;
     font-size: 1.8rem;
     font-family: $secondaryFont;
-
+    @media only screen and (min-width: 600px) {
+      font-size: 4rem;
+      padding: 1rem 1.5rem;
+    }
+    @media only screen and (min-width: 1000px) {
+      font-size: 2.5rem;
+      padding: 0.5rem 1rem;
+    }
     .dropDown__arrow {
       margin-left: 20px;
       color: black;
@@ -38,6 +44,12 @@
       border: none;
       font-size: 1.8rem;
       font-weight: bold;
+      &:hover {
+        background: $yellow;
+      }
+      &:disabled {
+        pointer-events: none;
+      }
     }
   }
 }

@@ -6,6 +6,14 @@
   align-items: center;
   margin: 4rem auto 0 auto;
   cursor: pointer;
+  @media only screen and (min-width: 600px) {
+    height: 6rem;
+  }
+  @media only screen and (min-width: 1000px) {
+    margin: 8rem auto 0 auto;
+    height: 5rem;
+    width: 15%;
+  }
   .toggle__checkbox {
     height: 0;
     width: 0;
@@ -19,6 +27,12 @@
     align-items: center;
     position: relative;
     transition: background-color 150ms linear;
+    @media only screen and (min-width: 600px) {
+      border-radius: 30px;
+    }
+    @media only screen and (min-width: 1000px) {
+      width: 50%;
+    }
     .toggle__switch {
       position: absolute;
       width: 25px;
@@ -27,11 +41,25 @@
       border-radius: 50%;
       -webkit-transition: 0.4s;
       transition: 0.4s;
+      @media only screen and (min-width: 600px) {
+        width: 40px;
+        height: 40px;
+      }
+      @media only screen and (min-width: 1000px) {
+        width: 30px;
+        height: 30px;
+      }
     }
     &--male {
       background-color: $blue;
       .toggle__switch {
         left: 4px;
+        @media only screen and (min-width: 600px) {
+          left: 10px;
+        }
+        @media only screen and (min-width: 1000px) {
+          left: 6px;
+        }
       }
     }
     &--female {
@@ -39,17 +67,29 @@
       .toggle__switch {
         left: calc(100% - 4px);
         transform: translateX(-100%);
+        @media only screen and (min-width: 600px) {
+          left: calc(100% - 10px);
+        }
+        @media only screen and (min-width: 1000px) {
+          left: calc(100% - 6px);
+        }
       }
     }
   }
   .toggle__male {
     font-size: 2.5rem;
     color: $blue;
+    @media only screen and (min-width: 600px) {
+      font-size: 6rem;
+    }
   }
   .toggle__female {
     font-size: 2.5rem;
     color: $pink;
     //female icon is less wide than male
     margin-left: 1rem;
+    @media only screen and (min-width: 600px) {
+      font-size: 6rem;
+    }
   }
 }

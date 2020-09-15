@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "./Search";
-import Baby from "./Baby";
+import BabyBoy from "../assets/images/BabyBoy.png";
+import BabyGirl from "../assets/images/BabyGirl.png";
 
 type HomeProps = {
   options: string[];
@@ -29,7 +30,10 @@ const Home = ({
         gender === "male" ? "home__wrapper--male" : "home__wrapper--female"
       }`}
     >
-      <h1 className="home__title">Bilingual Baby Name Finder</h1>
+      <h1 className="home__title">
+        <span>Bilingual</span> <span>Baby</span> <span>Name</span>{" "}
+        <span>Finder</span>
+      </h1>
       <h2 className="home__instruction">Choose two languages and a gender:</h2>
       <Search
         options={options}
@@ -41,7 +45,16 @@ const Home = ({
         gender={gender}
         setCurrentComponent={setCurrentComponent}
       />
-      <Baby />
+      <img
+        src={BabyBoy}
+        alt="baby boy"
+        className="home__baby home__baby--boy"
+      />
+      <img
+        src={BabyGirl}
+        alt="baby girl"
+        className="home__baby home__baby--girl"
+      />
     </div>
   );
 };

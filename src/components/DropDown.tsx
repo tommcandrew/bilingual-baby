@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { capitalise } from "../utils/capitalise";
@@ -27,12 +27,25 @@ const DropDown = ({
     setListOpen(false);
   };
 
+  useEffect(() => {
+    window.addEventListener("click", (e) => {
+      const ignoreElements = [
+        "dropDown__arrow",
+        "dropDown__option",
+        "dropDown__display",
+      ];
+      const target: any = e.target;
+      for (let i = 0; i < target.classList.length; i++) {
+        if (ignoreElements.includes(target.classList[i])) {
+          return;
+        }
+      }
+      setListOpen(false);
+    });
+  }, []);
+
   return (
-    <div
-      className="dropDown__wrapper"
-      tabIndex={0}
-      onBlur={() => setListOpen(false)}
-    >
+    <div className="dropDown__wrapper">
       <button type="button" className="dropDown__display" onClick={toggleList}>
         {capitalise(selectedOption)}
         {listOpen ? (

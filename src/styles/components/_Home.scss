@@ -1,5 +1,6 @@
 .home__wrapper {
   height: 100%;
+  position: relative;
   &--male {
     background-image: linear-gradient(lighten($blue, 20%), lighten($blue, 40%));
   }
@@ -13,10 +14,91 @@
     color: white;
     text-shadow: 2px 2px 3px #000000;
     padding-top: 3rem;
+    @media only screen and (min-width: 600px) {
+      font-size: 8rem;
+      padding-top: 5rem;
+    }
+    @media only screen and (min-width: 1000px) {
+      font-size: 6rem;
+    }
   }
   .home__instruction {
     text-align: center;
     margin-top: 5rem;
     font-size: 1.8rem;
+    @media only screen and (min-width: 600px) {
+      font-size: 3rem;
+      margin-top: 7rem;
+    }
+    @media only screen and (min-width: 1000px) {
+      font-size: 2.2rem;
+    }
+  }
+  .home__baby {
+    display: none;
+    position: absolute;
+    @media only screen and (min-width: 600px) {
+      display: block;
+    }
+    &--girl {
+      width: 250px;
+      @media only screen and (min-width: 600px) {
+        right: 2rem;
+        bottom: 1rem;
+      }
+      @media only screen and (min-width: 600px) {
+        right: 5rem;
+        bottom: 3rem;
+      }
+    }
+    &--boy {
+      left: 5rem;
+      bottom: 5rem;
+      width: 210px;
+      @media only screen and (min-width: 600px) {
+        left: 5rem;
+        bottom: 1rem;
+      }
+      @media only screen and (min-width: 600px) {
+        left: 5rem;
+        bottom: 3rem;
+      }
+    }
+  }
+}
+
+.home__title span {
+  display: inline-block;
+  opacity: 0;
+}
+
+.home__title span:nth-child(1) {
+  animation: bounce 0.4s ease-in-out 0s forwards;
+}
+
+.home__title span:nth-child(2) {
+  animation: bounce 0.4s ease-in-out 0.15s forwards;
+}
+
+.home__title span:nth-child(3) {
+  animation: bounce 0.4s ease-in-out 0.3s forwards;
+}
+
+.home__title span:nth-child(4) {
+  animation: bounce 0.4s ease-in-out 0.45s forwards;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

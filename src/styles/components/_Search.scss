@@ -5,16 +5,42 @@
     width: 100%;
     margin: 0 auto;
     margin-top: 3rem;
+    @media only screen and (min-width: 600px) {
+      margin-top: 7rem;
+    }
+    @media only screen and (min-width: 1000px) {
+      margin-top: 8rem;
+      width: 50%;
+    }
   }
   .search__button {
     margin: 7rem auto 0 auto;
     display: block;
     font-size: 1.8rem;
     background: $yellow;
-    // color: white;
     padding: 1rem 1.3rem;
     border-radius: 25px;
     border: 2px solid white;
     font-weight: bold;
+    cursor: pointer;
+    -webkit-box-shadow: 4px 6px 9px -6px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 4px 6px 9px -6px rgba(0, 0, 0, 0.64);
+    box-shadow: 4px 6px 9px -6px rgba(0, 0, 0, 0.64);
+    transition: all 0.15s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media only screen and (min-width: 600px) {
+      font-size: 3.5rem;
+      border-radius: 35px;
+      padding: 1.3rem 2.2rem;
+      margin: 10rem auto 0 auto;
+    }
+    @media only screen and (min-width: 1000px) {
+      font-size: 2.5rem;
+      border-radius: 35px;
+      padding: 0.8rem 2rem;
+      margin: 10rem auto 0 auto;
+    }
   }
 }
