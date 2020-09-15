@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 type DoubleListProps = {
-  list: { [key: string]: any[] }[];
+  list: { [key: string]: string | number }[];
   currentListName: string;
 };
 
@@ -36,8 +36,7 @@ const DoubleList = ({ list, currentListName }: DoubleListProps) => {
         list
           .filter(
             (item) =>
-              Number(item.match) >= radioOptions.indexOf(matchType) + 1 ||
-              !item.match
+              item.match >= radioOptions.indexOf(matchType) + 1 || !item.match
           )
           .map((item, index) => (
             <div key={index} className="doubleList__item">

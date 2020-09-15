@@ -8,8 +8,12 @@ const list = [
   { english: "sally", turkish: "salha" },
 ];
 
+const currentListName = "same";
+
 describe("DoubleList", () => {
-  const component = shallow(<DoubleList list={list} />);
+  const component = shallow(
+    <DoubleList list={list} currentListName={currentListName} />
+  );
   it("should contain wrapper div", () => {
     expect(component.find(".doubleList__wrapper")).toHaveLength(1);
   });
