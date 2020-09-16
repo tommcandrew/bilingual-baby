@@ -50,6 +50,8 @@
       text-overflow: ellipsis;
       cursor: pointer;
       border: none;
+      border-top: 1px solid #555;
+
       font-size: 1.8rem;
       font-weight: bold;
       &:hover {

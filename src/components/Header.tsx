@@ -11,7 +11,7 @@ const Header = ({ setCurrentComponent, gender }: HeaderProps) => {
   return (
     <div className="header__wrapper">
       <h1 className="header__title" onClick={() => setCurrentComponent("Home")}>
-        Bilingual Baby Name Finder
+        Bilingual Baby
       </h1>
       <div className="header__feet">
         <img src={gender === "male" ? feetPink : feetBlue} alt="baby feet" />
