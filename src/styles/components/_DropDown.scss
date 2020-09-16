@@ -1,7 +1,15 @@
 .dropDown__wrapper {
   position: relative;
   user-select: none;
+  min-width: 35%;
+  @media only screen and (min-width: 600px) {
+    min-width: 30%;
+  }
+  @media only screen and (min-width: 1000px) {
+    min-width: 20%;
+  }
   .dropDown__display {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,6 +57,14 @@
       }
       &:disabled {
         pointer-events: none;
+      }
+      @media only screen and (min-width: 600px) {
+        padding: 3rem 0;
+        font-size: 3rem;
+      }
+      @media only screen and (min-width: 1000px) {
+        padding: 1.5rem 0;
+        font-size: 2rem;
       }
     }
   }

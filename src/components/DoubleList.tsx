@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import RadioButtons from "./RadioButtons";
+import { capitalise } from "../utils/capitalise";
 
 type DoubleListProps = {
   list: { [key: string]: string | number }[];
@@ -14,24 +16,16 @@ const DoubleList = ({ list, currentListName }: DoubleListProps) => {
     const selectedMatchType = e.target.value;
     setMatchType(selectedMatchType);
   };
+
   return (
     <div className="doubleList__wrapper">
-      <div className="doubleList__radio">
-        {currentListName === "similar" &&
-          radioOptions.map((option, index) => (
-            <div key={index}>
-              <input
-                type="radio"
-                id={option}
-                name="matches"
-                value={option}
-                onChange={handleRadioClick}
-                checked={option === matchType}
-              />
-              <label htmlFor={option}>{option.match}</label>
-            </div>
-          ))}
-      </div>
+      {currentListName === "similar" && (
+        <RadioButtons
+          options={radioOptions}
+          handleChange={handleRadioClick}
+          matchType={matchType}
+        />
+      )}
       {list.length &&
         list
           .filter(
@@ -39,9 +33,11 @@ const DoubleList = ({ list, currentListName }: DoubleListProps) => {
               item.match >= radioOptions.indexOf(matchType) + 1 || !item.match
           )
           .map((item, index) => (
-            <div key={index} className="doubleList__item">
-              <div>{item[Object.keys(item)[0]]}</div>
-              <div>{item[Object.keys(item)[1]]}</div>
+            <div key={index} className="doubleList__line">
+              <div className="doubleList__item">
+                <div>{capitalise(item[Object.keys(item)[0]])}</div>
+                <div>{capitalise(item[Object.keys(item)[1]])}</div>
+              </div>
             </div>
           ))}
       {!list.length && <p className="doubleList__message">No names found.</p>}

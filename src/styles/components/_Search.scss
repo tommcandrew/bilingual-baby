@@ -28,7 +28,10 @@
     box-shadow: 4px 6px 9px -6px rgba(0, 0, 0, 0.64);
     transition: all 0.15s ease-in-out;
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
+      -webkit-box-shadow: 4px 6px 15px -6px rgba(0, 0, 0, 0.64);
+      -moz-box-shadow: 4px 6px 15px -6px rgba(0, 0, 0, 0.64);
+      box-shadow: 4px 6px 15px -6px rgba(0, 0, 0, 0.64);
     }
     @media only screen and (min-width: 600px) {
       font-size: 3.5rem;

@@ -25,11 +25,7 @@ const Home = ({
   setCurrentComponent,
 }: HomeProps) => {
   return (
-    <div
-      className={`home__wrapper ${
-        gender === "male" ? "home__wrapper--male" : "home__wrapper--female"
-      }`}
-    >
+    <div className="home__wrapper">
       <h1 className="home__title">
         <span>Bilingual</span> <span>Baby</span> <span>Name</span>{" "}
         <span>Finder</span>

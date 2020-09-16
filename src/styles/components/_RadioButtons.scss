@@ -1,0 +1,19 @@
+.radioButtons__wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  font-size: 2rem;
+  @media only screen and (min-width: 600px) {
+    font-size: 2.5rem;
+  }
+  @media only screen and (min-width: 1000px) {
+    font-size: 2.5rem;
+  }
+  .radioButtons__button {
+    cursor: pointer;
+  }
+  .radioButtons__label {
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+}

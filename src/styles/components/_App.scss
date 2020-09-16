@@ -1,3 +1,9 @@
 .app__wrapper {
   height: 100%;
+  &--male {
+    background: lighten($blue, 25%);
+  }
+  &--female {
+    background: lighten($pink, 25%);
+  }
 }

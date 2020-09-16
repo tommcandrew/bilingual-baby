@@ -27,11 +27,12 @@
     align-items: center;
     position: relative;
     transition: background-color 150ms linear;
+    cursor: pointer;
     @media only screen and (min-width: 600px) {
       border-radius: 30px;
     }
     @media only screen and (min-width: 1000px) {
-      width: 50%;
+      width: 40%;
     }
     .toggle__switch {
       position: absolute;
@@ -79,15 +80,15 @@
   .toggle__male {
     font-size: 2.5rem;
     color: $blue;
+    flex-basis: 25%;
     @media only screen and (min-width: 600px) {
       font-size: 6rem;
     }
   }
   .toggle__female {
+    flex-basis: 25%;
     font-size: 2.5rem;
     color: $pink;
-    //female icon is less wide than male
-    margin-left: 1rem;
     @media only screen and (min-width: 600px) {
       font-size: 6rem;
     }

@@ -18,7 +18,11 @@ const App = () => {
   }, [lang1, lang2]);
 
   return (
-    <div className="app__wrapper">
+    <div
+      className={`app__wrapper ${
+        gender === "male" ? "app__wrapper--male" : "app__wrapper--female"
+      }`}
+    >
       {currentComponent === "Home" && (
         <Home
           options={options}
@@ -33,12 +37,6 @@ const App = () => {
       )}
       {currentComponent === "Results" && (
         <Results
-          options={options}
-          lang1={lang1}
-          lang2={lang2}
-          setLang1={setLang1}
-          setLang2={setLang2}
-          setGender={setGender}
           gender={gender}
           setCurrentComponent={setCurrentComponent}
           langPair={langPair}

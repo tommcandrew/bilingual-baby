@@ -8,7 +8,8 @@ const list = [
   { english: "sally", turkish: "salha" },
 ];
 
-const currentListName = "same";
+// const currentListName = "same";
+const currentListName = "similar";
 
 describe("DoubleList", () => {
   const component = shallow(
@@ -23,7 +24,7 @@ describe("DoubleList", () => {
   // it("should display message if there are no list items", () => {
   //   expect(component.find(".doubleList__message")).toHaveLength(1);
   // });
-  it("should render radio buttons", () => {
-    expect(component.find(".doubleList__radio")).toHaveLength(1);
+  it("should render RadioButton component if currentListName is similar", () => {
+    expect(component.find("RadioButtons")).toHaveLength(1);
   });
 });

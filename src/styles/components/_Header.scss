@@ -1,0 +1,32 @@
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  .header__title {
+    text-align: center;
+    font-family: $titleFont;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 2px 2px 3px #000000;
+    cursor: pointer;
+    @media only screen and (min-width: 600px) {
+      font-size: 5rem;
+    }
+  }
+  .header__feet {
+    flex-basis: 10%;
+    margin-left: 5%;
+    display: none;
+    @media only screen and (min-width: 600px) {
+      display: block;
+    }
+    @media only screen and (min-width: 1000px) {
+      flex-basis: 5%;
+      margin-left: 2.5%;
+    }
+  }
+  .header__feet img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+.doubleList__wrapper {
+  background: #ffffe6;
+  font-family: $listFont;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  // -webkit-box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.3);
+  // -moz-box-shadow: 1px 1px 10px 3pxrgba (0, 0, 0, 0.3);
+  // box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.3);
+  @media only screen and (min-width: 600px) {
+    border-radius: 4px;
+  }
+
+  .doubleList__line {
+    border: 1px solid rgba(62, 59, 77, 0.1);
+    padding-top: 1.5rem;
+    @media only screen and (min-width: 1000px) {
+      padding-top: 3.5rem;
+    }
+  }
+  .doubleList__item {
+    font-size: 2.5rem;
+    padding: 0 2rem;
+    margin-bottom: -0.2rem;
+    color: #383b3e;
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (min-width: 600px) {
+      font-size: 5rem;
+      padding: 0 4rem;
+    }
+    @media only screen and (min-width: 1000px) {
+      font-size: 2.5rem;
+    }
+    @media only screen and (min-width: 600px) {
+      font-size: 3rem;
+    }
+  }
+}

@@ -33,7 +33,7 @@ describe("Results", () => {
     expect(component.find("Header")).toHaveLength(1);
   });
   it("should render list component", () => {
-    expect(component.find(".results__list")).toHaveLength(1);
+    expect(component.find(".results__list-wrapper")).toHaveLength(1);
   });
   it("should render SingleList component", () => {
     expect(component.find("SingleList")).toHaveLength(1);
@@ -57,8 +57,5 @@ describe("Results", () => {
     const secondTab = component.find(".results__tab").at(1);
     secondTab.simulate("click");
     expect(component.find("DoubleList")).toHaveLength(1);
-  });
-  it("should render Search component", () => {
-    expect(component.find("Search")).toHaveLength(1);
   });
 });

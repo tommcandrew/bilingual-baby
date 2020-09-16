@@ -32,6 +32,7 @@ const DropDown = ({
       const ignoreElements = [
         "dropDown__arrow",
         "dropDown__option",
+        "dropDown__list",
         "dropDown__display",
       ];
       const target: any = e.target;
