@@ -18,14 +18,17 @@
   }
   .home__instruction {
     text-align: center;
-    margin-top: 5rem;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    font-style: italic;
+    width: 70%;
+    margin: 5rem auto 5rem auto;
     @media only screen and (min-width: 600px) {
       font-size: 3rem;
       margin-top: 7rem;
     }
     @media only screen and (min-width: 1000px) {
       font-size: 2.2rem;
+      width: 30%;
     }
   }
   .home__baby {
